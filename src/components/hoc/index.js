@@ -1,3 +1,3 @@
-import withBookServiceContext from './with-book-service-context';
+import withBookService from './with-book-service-context';
 
-export {withBookServiceContext};
+export {withBookService};
