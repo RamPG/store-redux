@@ -1,20 +1,15 @@
 import React from 'react';
-
+import {Route, Switch} from 'react-router-dom';
 import './app.css';
-
-import BookstoreService from '../../services/bookstore-service';
-import ErrorBoundry from '../error-boundry';
-import {BookServiceProvider} from '../bookstore-service-context';
-import ErrorIndicator from '../error-indicator/error-indicator';
+import {CartPage, HomePage} from '../pages';
 
 const App = () => {
-    const bookService = new BookstoreService();
     return (
-        <ErrorBoundry>
-            <BookServiceProvider value={bookService}>
-                <ErrorIndicator/>
-            </BookServiceProvider>
-        </ErrorBoundry>
+        <Switch>
+            <Route path='/' component={HomePage}/>
+            <Route path='/cart' component={CartPage}/>
+            <Route render={() => <h2>Page not found</h2>}/>
+        </Switch>
     );
 };
 
