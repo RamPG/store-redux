@@ -9,7 +9,7 @@ const App = () => {
         <main role="main" className="container">
             <ShopHeader numItems={5} total={210}/>
             <Switch>
-                <Route path="/" component={HomePage}/>
+                <Route path="/" component={HomePage} exact/>
                 <Route path="/cart" component={CartPage}/>
                 <Route render={() => <h2>Page not found</h2>}/>
             </Switch>
