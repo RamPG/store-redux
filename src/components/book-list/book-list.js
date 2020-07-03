@@ -5,6 +5,8 @@ import BookListItem from '../book-list-item';
 import {withBookService} from '../hoc/index';
 import {booksLoaded} from '../../actions';
 
+import './book-list.css';
+
 class BookList extends React.Component {
 
     componentDidMount() {
@@ -14,7 +16,7 @@ class BookList extends React.Component {
 
     render() {
         return (
-            <ul>
+            <ul className="book-list">
                 {
                     this.props.books.map((book) =>
                         <li key={book.id}>
