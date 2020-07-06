@@ -1,8 +1,8 @@
 import React from 'react';
 import './book-list-item.css';
 
-const BookListItem = ({book}) => {
-    const {title, author, price, coverImage} = book;
+const BookListItem = (props) => {
+    const {onAddedToCart, book: {id, title, author, price, coverImage}} = props;
     return (
         <div className="book-list-item">
             <div className="book-cover">
@@ -12,7 +12,11 @@ const BookListItem = ({book}) => {
                 <a href="#" className="book-title">{title}</a>
                 <div className="book-author">{author}</div>
                 <div className="book-price">${price}</div>
-                <button className="btn btn-info add-to-cart">Add to cart</button>
+                <button
+                    onClick={() => onAddedToCart(id)}
+                    className="btn btn-info add-to-cart">
+                    Add to cart
+                </button>
             </div>
         </div>
     );
