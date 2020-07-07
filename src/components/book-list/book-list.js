@@ -47,11 +47,11 @@ const mapDispatchToProps = (dispatch, {bookService}) => {
         onAddedToCart: (id) => dispatch(bookAddedToCart(id))
     };
 };
-const mapStateToProps = (state) => {
+const mapStateToProps = ({bookList: {books, loading, error}}) => {
     return {
-        books: state.books,
-        loading: state.loading,
-        error: state.error
+        books,
+        loading,
+        error
     };
 };
 export default withBookService(connect(mapStateToProps, mapDispatchToProps)(BookListContainer));
